@@ -1,0 +1,34 @@
+/*Start CSS Grid Generator */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "navigation-container navigation-container navigation-container navigation-container navigation-container navigation-container navigation-container navigation-container navigation-container navigation-container" ". . featured-container featured-container featured-container banner-container banner-container banner-container . ." ". . featured-container featured-container featured-container banner-container banner-container banner-container . ." ". . featured-container featured-container featured-container banner-container banner-container banner-container . ." ". . featured-container featured-container featured-container music-container music-container music-container . ." ". . contact-container contact-container contact-container music-container music-container music-container . ." ". . contact-container contact-container contact-container projects-container projects-container projects-container . ." ". . about-container about-container about-container projects-container projects-container projects-container . ." ". . about-container about-container about-container friends-container friends-container friends-container . ." ". . about-container about-container about-container friends-container friends-container friends-container . ." ". . about-container about-container about-container friends-container friends-container friends-container . .";
+}
+
+.navigation-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: ". . ." ". . .";
+    grid-area: navigation-container;
+}
+
+.featured-container {
+    grid-area: featured-container;
+}
+
+.contact-container {
+    grid-area: contact-container;
+}
+
+.banner-container { grid-area: banner-container; }
+
+.music-container { grid-area: music-container; }
+
+.friends-container { grid-area: friends-container; }
+
+.about-container { grid-area: about-container; }
+
+.projects-container { grid-area: projects-container; }
+/*End CSS Grid Generator */
