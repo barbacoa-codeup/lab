@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pod</title>
+</head>
+<body>
+<ul id="font-grow">
+    <li>text</li>
+    <li>text</li>
+    <li>text</li>
+</ul>
+
+<hr />
+
+<ul id="hl-toggle">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+
+<hr />
+
+<h4>Favorite Food:</h4>
+<ul id="favorite-food">
+    <li id="one" onclick="liHighlight()">Ramen</li>
+    <li>Sushi</li>
+    <li>Curry</li>
+</ul>
+
+<input type="text" id="input">
+<button id="add-to-list" onclick="addFood()">Add to List</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    // Whenever a list item inside of the ul with the id of font-grow is double clicked, the font size of the list item that was clicked should double.
+
+    let size = 10;
+    $("#font-grow").children().dblclick(function() {
+            $(this).css("font-size", size * size + "px");
+            size++;
+    });
+
+    // When a list item inside of the ul with the id of hl-toggle is first clicked, the background of the li that was clicked should change to yellow. When a list item that has a yellow background is clicked, the background should change back to the original background.
+
+    $("#hl-toggle").children().click(function() {
+        if (this.getAttribute('style') == 'background-color:yellow;')
+            this.setAttribute('style', '');
+        else
+            this.setAttribute('style', 'background-color:yellow;');
+    });
+
+    // Write some JavaScript that changes the background-color of the container to pink after 3 seconds.
+
+    myVar = setTimeout(function(){
+        document.body.style.backgroundColor = "pink"
+    }, 3000);
+
+    // Allow the user to type in their favorite food into the input and append it to the list once the button is clicked
+
+    function addFood() {
+        let liLast = document.createElement('li');
+        liLast.innerHTML = input.value;
+        document.getElementById("favorite-food").append(liLast);
+        document.getElementById('input').value = '';
+    }
+</script>
+</body>
+</html>
