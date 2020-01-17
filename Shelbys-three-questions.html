@@ -36,11 +36,16 @@
 <script>
     // Whenever a list item inside of the ul with the id of font-grow is double clicked, the font size of the list item that was clicked should double.
 
-    let size = 10;
     $("#font-grow").children().dblclick(function() {
-            $(this).css("font-size", size * size + "px");
-            size++;
+        let li = $(this);
+        let fontSize = getCurrentFontSize(li);
+        li.css("font-size", fontSize + 2);
     });
+
+    function getCurrentFontSize(li) {
+        let fontSize = li.eq(0).css("font-size");
+        return parseInt(fontSize, 10);
+    }
 
     // When a list item inside of the ul with the id of hl-toggle is first clicked, the background of the li that was clicked should change to yellow. When a list item that has a yellow background is clicked, the background should change back to the original background.
 
