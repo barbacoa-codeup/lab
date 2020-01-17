@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1: Javascript Practice</title>
+
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<h1>Javascript Events Index</h1>
+<ul>
+    <li id="click">.click()</li>
+    <li id="dblclick">.dblclick()</li>
+    <li id="mouseenter">.mouseenter()</li>
+    <li id="mouseleave">.mouseleave()</li>
+    <li id="mousedown">.mousedown()</li>
+    <li id="mouseup">.mouseup()</li>
+    <li id="hover">.hover()</li>
+    <li>.focus() <input aria-label="Focus" placeholder=".focus()" type="text" id="focus"></li>
+    <li>.blur() <input aria-label="Focus" type="text" placeholder=".blur()" id="blur"></li>
+    <li id="on">.on()</li>
+</ul>
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+<script>
+    (function($) {
+
+        $(document).ready(function()
+        {
+            $('#click').click(function(e)
+            {
+                $(this).toggleClass('highlight')
+            });
+
+            $("#dblclick").dblclick(function(){
+                $(this).toggleClass('highlight');
+            });
+
+            $("#mouseenter").mouseenter(function(){
+                $(this).toggleClass('highlight');
+            });
+
+            $("#mouseleave").mouseleave(function(){
+                $(this).toggleClass('highlight');
+            });
+
+            $("#mousedown").mousedown(function(){
+                $(this).toggleClass('highlight');
+            });
+
+            $("#mouseup").mouseup(function(){
+                $(this).toggleClass('highlight');
+            });
+
+            $("#hover").hover(function(){
+                    $(this).toggleClass('highlight');
+                },
+                function(){
+                    $(this).toggleClass('highlight');
+                });
+
+            $("#focus").focus(function(){
+                $(this).toggleClass('highlight');
+            });
+
+            $("#blur").blur(function(){
+                $(this).css("background-color", "#ffffff");
+            });
+
+            $("#on").on({
+                mouseenter: function(){
+                    $(this).css("background-color", "lightgray");
+                },
+                mouseleave: function(){
+                    $(this).css("background-color", "lightblue");
+                },
+                click: function(){
+                    $(this).css("background-color", "yellow");
+                }
+            });
+        });
+    })(jQuery);
+</script>
+</body>
+</html>
