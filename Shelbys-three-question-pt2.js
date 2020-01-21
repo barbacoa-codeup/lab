@@ -27,14 +27,6 @@ function totalVotes(arr) {
     return arr.reduce(function (totalVotes, voter) {
         return totalVotes + ( voter.voted ? 1 : 0); //ternary operator, like a one line if/else
     }, 0);// initial value for the reduce function
-
-    // let voterCount = 0;
-    // for(let i = 0; i < arr.length; i++){
-    //     if(arr[i].voted === true){
-    //         voterCount++;
-    //     }
-    // }
-    // return voterCount;
 }
 
 
@@ -120,17 +112,17 @@ function voterResults(arr) {
    };
 
    for(let i = 0; i<arr.length; i++){
-       if(arr[i].age>18&&arr[i].age<25){
+       if(arr[i].age>=18 && arr[i].age<=25){
+           result.youth++;
            if(arr[i].voted ){
                result.youngVotes++;
            }
-           result.youth++
-       }else if(arr[i].age>25&&arr[i].age<35){
+       }else if(arr[i].age>=26 && arr[i].age<=35){
+           result.mids++;
            if(arr[i].voted){
                result.midVotes++;
            }
-           result.mids++;
-       }else{
+       }else if (arr[i].age>=36 && arr[i].age<=55){
            result.olds++;
            if(arr[i].voted){
                result.oldVotes++;
