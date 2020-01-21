@@ -15,8 +15,15 @@ function isPalindrome(str) {
 //2) Write a method which will remove any given character from a String?
 // hint: you can remove a given character from String by converting it into a character array and then using substring() method for removing them from output string.
 
-function removeChar(str) {
-    
+
+function removeChar(str, character) {
+    let letterArray= str.toLowerCase().split('');
+    console.log(letterArray);
+    let char = character.toLowerCase();
+    console.log(char);
+    return letterArray.replace(char, "")
 }
+
+removeChar('banana', 'a');
 
 // 3) Print all permutation of String both iterative and Recursive way? (solution)
