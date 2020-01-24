@@ -2,23 +2,23 @@
 
 // 1) Write code to check a String is palindrome or not?
 
-function isPalindrome(str) {
+const isPalindrome = str => {
     // if the input is a string
     if (typeof (str) === 'string')
         // return true if the string is equal to:
         // string -> array of letters -> reverse the order -> rejoin array as new string
         return str === str.split('').reverse().join('');
-}
+};
 
-// isPalindrome('racecar');
-// isPalindrome('element');
-// isPalindrome(4);
-// isPalindrome('eye');
+isPalindrome('racecar');
+isPalindrome('element');
+isPalindrome(4);
+isPalindrome('eye');
 
 //2) Write a method which will remove any given character from a String?
 // hint: you can remove a given character from String by converting it into a character array and then using substring() method for removing them from output string.
 
-function removeChar(str, char) {
+const removeChar = (str, char) => {
     // puts string to lowercase, separates letters into array
     let letterArray = str.toLowerCase().split('');
     // puts designated character to lowercase
@@ -33,10 +33,10 @@ function removeChar(str, char) {
     }
     // join the new array without the designated character into a string
     return newArray.join('')
-}
+};
 
-// removeChar('banana', 'a');
-// removeChar('oh okay', 'o');
+removeChar('banana', 'a');
+removeChar('oh okay', 'o');
 
 // 3) Write a function named `capitalizeName` that accepts a string that is a first
 // and last name separated by a space, and returns a string that that has the
@@ -50,11 +50,13 @@ function removeChar(str, char) {
 //     ```
 //
 
-function capitalizeName(str) {
-    var splitStr = str.toLowerCase().split(' ');
-    for (var i = 0; i < splitStr.length; i++) {
+const capitalizeName = str => {
+    let splitStr = str.toLowerCase().split(' ');
+    for (let i = 0; i < splitStr.length; i++) {
         splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
     }
     // Directly return the joined string
     return splitStr.join(' ');
-}
+};
+
+    capitalizeName('ron weasley'); // "Ron Weasley"
