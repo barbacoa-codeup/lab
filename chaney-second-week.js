@@ -38,5 +38,23 @@ function removeChar(str, char) {
 // removeChar('banana', 'a');
 // removeChar('oh okay', 'o');
 
-// 3) Print all permutation of String both iterative and Recursive way?
+// 3) Write a function named `capitalizeName` that accepts a string that is a first
+// and last name separated by a space, and returns a string that that has the
+// first and last names capitalized.
+//
+// *For this problem, you may assume that the function will only ever be called
+// with a string that has two words separated by a single space.*
+//
+// ```js
+//     capitalizeName('ron weasley') // "Ron Weasley"
+//     ```
+//
 
+function capitalizeName(str) {
+    var splitStr = str.toLowerCase().split(' ');
+    for (var i = 0; i < splitStr.length; i++) {
+        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    }
+    // Directly return the joined string
+    return splitStr.join(' ');
+}
