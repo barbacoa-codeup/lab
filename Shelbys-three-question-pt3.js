@@ -36,3 +36,12 @@ console.log(mysteryFunc([48, 22, 0, 19, 33, 100], 10)); // ➞ [8, 2, 0, 9, 3, 0
 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 
+// Create a function that replaces all the vowels in a string with a specified character.
+
+function replaceVowels(str, ch) {
+    return str.replace(/[aeiou]/gi, ch);
+}
+
+console.log(replaceVowels("the aardvark", "#")); // ➞ "th# ##rdv#rk"
+console.log(replaceVowels("minnie mouse", "?")); // ➞ "m?nn?? m??s?"
+console.log(replaceVowels("shakespeare", "*")); // ➞ "sh*k*sp**r*"
