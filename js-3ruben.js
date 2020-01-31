@@ -40,25 +40,28 @@ var personnel = [
 
 // objective is to get the total score of force users and "filter" out the ones that arent force users
 
-let jediPersonnel = personnel.filter(function (person) {
+const jediPersonnel = personnel.filter(person => {
     return person.isForceUser;
 });
-
 console.log(jediPersonnel);
 
-let jediScores = jediPersonnel.map(function (jedi) {
+const jediScores = jediPersonnel.map(jedi=> {
     return jedi.pilotingScore + jedi.shootingScore;
 });
 
 console.log(jediScores);
 
-let totalJediScore = jediScores.reduce(function (acc, score) {
-    return acc + score;
-}, 0);
-
-console.log(totalJediScore);
+// const totalJediScore = jediScores.reduce((acc, score) => {
+//     return acc + score;
+// }, 0);
+//
+// console.log(totalJediScore);
 
 const totalJediScore = personnel
     .filter(person => person.isForceUser)
     .map(jedi => jedi.pilotingScore + jedi.shootingScore)
     .reduce((acc, score) => acc + score, 0);
+
+console.log(totalJediScore);
+
+
